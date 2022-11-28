@@ -1,9 +1,9 @@
-import { useState } from "react";
-import data from "../data/adalabers.json";
+import { useEffect, useState } from "react";
+import fetchAda from "../services/api";
 import "../styles/App.scss";
 
 function App() {
-  const [allAdalabers, setAllAdalabers] = useState(data.results);
+  const [allAdalabers, setAllAdalabers] = useState([]);
   const [newAda, setNewAda] = useState({
     name: '',
     counselor: '',
@@ -20,6 +20,12 @@ function App() {
     ev.preventDefault()
     setAllAdalabers([...allAdalabers, newAda])
   }
+  useEffect(()=>{
+    fetchAda().then(dataApi=> {
+      setAllAdalabers(dataApi.results);
+    });
+  }, []);
+  console.log(allAdalabers);
   const handleSearch = (ev) => {
     setSearch(ev.target.value);
   }
