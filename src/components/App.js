@@ -9,6 +9,7 @@ function App() {
     counselor: '',
     speciality:'',
   });
+  const [search, setSearch] = useState('');
 
   const handleAdd = (ev) =>{
     setNewAda({...newAda,[ev.target.id]: ev.target.value})
@@ -18,8 +19,12 @@ function App() {
     ev.preventDefault()
     setAllAdalabers([...allAdalabers, newAda])
   }
-
-  const htmlAda = allAdalabers.map((oneAda, index) => {
+  const handleSearch = (ev) => {
+    setSearch(ev.target.value);
+  }
+  const htmlAda = allAdalabers
+  .filter((oneAda) =>oneAda.name.toLowerCase().includes(search.toLowerCase()))
+  .map((oneAda, index) => {
     return (
       <tr key={index} className="eachproperty">
         <td className="eachtd">{oneAda.name}</td>
@@ -28,13 +33,19 @@ function App() {
       </tr>
     );
   });
+ 
+ 
 
   return (
     <div className="container">
       <h1 className="title">ADALABERS</h1>
       <form>
-        <label htmlFor="">Nombre:</label>
-        <input></input>
+        <label htmlFor="searchName">Nombre:</label>
+        <input onInput={handleSearch} type="search"
+            name="searchId"
+            id='searchId'
+            placeholder="Filtrar nombre"
+            value={search}></input>
         <label>Escoge una tutora</label>
         <select>
           <option value='yanelis'>Yanelis</option>
