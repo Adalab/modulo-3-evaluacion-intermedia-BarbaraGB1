@@ -1,0 +1,38 @@
+.title {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  font-size: 35px;
+  text-decoration: underline;
+}
+.table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+.header {
+  width: 500px;
+  margin-bottom: 30px;
+  background-color: rgb(252, 150, 17);
+  color: white;
+  &_son {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.body {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.eachproperty {
+  display: flex;
+  justify-content: space-between;
+  line-height: 40px;
+}
+.eachtd {
+  text-align: center;
+}
