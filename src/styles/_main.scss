@@ -20,7 +20,7 @@
   color: white;
   &_son {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
 .body {
@@ -29,9 +29,11 @@
   flex-direction: column;
 }
 .eachproperty {
+  width: 800px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   line-height: 40px;
+  text-align: left;
 }
 .add {
   margin-top: 30px;
@@ -51,7 +53,8 @@
 }
 .eachtd {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  text-align: center;
+  text-align: left;
+  width: 300px;
 }
