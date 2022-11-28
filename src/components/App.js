@@ -24,7 +24,7 @@ function App() {
     setSearch(ev.target.value);
   }
   const handleSelect = (ev)=>{
-    setSearch(ev.target.value);
+    setSearchCoun(ev.target.value);
   }
   const htmlAda = allAdalabers
   .filter((oneAda) =>oneAda.name.toLowerCase().includes(search.toLowerCase()))
