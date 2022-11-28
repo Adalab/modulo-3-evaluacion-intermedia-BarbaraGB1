@@ -29,12 +29,13 @@ function App() {
   const htmlAda = allAdalabers
   .filter((oneAda) =>oneAda.name.toLowerCase().includes(search.toLowerCase()))
   .filter((oneAda) =>oneAda.counselor.toLowerCase().includes(searchCoun.toLowerCase()))
-  .map((oneAda, index) => {
+  .map((oneAda) => {
     return (
-      <tr key={index} className="eachproperty">
+      <tr key={oneAda.id} className="eachproperty">
         <td className="eachtd">{oneAda.name}</td>
         <td className="eachtd">{oneAda.counselor}</td>
         <td className="eachtd">{oneAda.speciality}</td>
+        <td className="eachtd">{oneAda.social_networks.map((red)=>{return(<a href="x">{red.name}</a>)})}</td>
       </tr>
     );
   });
@@ -64,6 +65,7 @@ function App() {
             <th>Nombre</th>
             <th>Tutora</th>
             <th>Especialidad</th>
+            <th>Redes</th>
           </tr>
         </thead>
         <tbody className="body">{htmlAda}</tbody>

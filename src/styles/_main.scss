@@ -15,7 +15,7 @@
   height: 1700px;
 }
 .header {
-  width: 500px;
+  width: 800px;
   margin-bottom: 30px;
   background-color: rgb(252, 150, 17);
   color: white;
@@ -25,7 +25,7 @@
   }
 }
 .body {
-  width: 500px;
+  width: 800px;
   display: flex;
   flex-direction: column;
 }
@@ -49,4 +49,10 @@
 }
 .btn {
   width: 200px;
+}
+.eachtd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
