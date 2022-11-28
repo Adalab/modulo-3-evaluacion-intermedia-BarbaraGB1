@@ -10,6 +10,7 @@ function App() {
     speciality:'',
   });
   const [search, setSearch] = useState('');
+  const [searchCoun, setSearchCoun] = useState('');
 
   const handleAdd = (ev) =>{
     setNewAda({...newAda,[ev.target.id]: ev.target.value})
@@ -22,8 +23,12 @@ function App() {
   const handleSearch = (ev) => {
     setSearch(ev.target.value);
   }
+  const handleSelect = (ev)=>{
+    setSearch(ev.target.value);
+  }
   const htmlAda = allAdalabers
   .filter((oneAda) =>oneAda.name.toLowerCase().includes(search.toLowerCase()))
+  .filter((oneAda) =>oneAda.counselor.toLowerCase().includes(searchCoun.toLowerCase()))
   .map((oneAda, index) => {
     return (
       <tr key={index} className="eachproperty">
@@ -47,7 +52,7 @@ function App() {
             placeholder="Filtrar nombre"
             value={search}></input>
         <label>Escoge una tutora</label>
-        <select>
+        <select onChange={handleSelect}>
           <option value='yanelis'>Yanelis</option>
           <option value='dayana'>Dayana</option>
           <option value='ivan'>Iván</option>
