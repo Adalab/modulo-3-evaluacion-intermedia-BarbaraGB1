@@ -8,6 +8,7 @@ function App() {
     name: '',
     counselor: '',
     speciality:'',
+    social_networks: [],
   });
   const [search, setSearch] = useState('');
   const [searchCoun, setSearchCoun] = useState('');
