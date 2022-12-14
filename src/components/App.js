@@ -63,7 +63,7 @@ function App() {
         <select onChange={handleSelect}>
           <option value='yanelis'>Yanelis</option>
           <option value='dayana'>Dayana</option>
-          <option value='ivan'>Iván</option>
+          <option value='iván'>Iván</option>
         </select>
       </form>
       <table className="table">
